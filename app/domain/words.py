@@ -1,16 +1,17 @@
 from sqlalchemy import Column, Integer, String
 from pydantic import BaseModel
 
+from . import AbstractTableBase, AbstractBaseModel
 
-class WordTable(Base):
+class WordTable(AbstractTableBase):
     __tablename__ = 'word'
-    wrd_id = Column(Integer, primary_key=True)
+    wrd_id = Column(Integer, primary_key=True, autoincrement="auto")
     wrd_lgcl_nm: Column(String(50), nullable=False)
     wrd_phcl_nm: Column(String(50), nullable=False)
     wrd_eng_nm: Column(String(50), nullable=False)
 
 
-class Word(BaseModel):
+class Word(AbstractBaseModel):
     wrd_id: int
     wrd_lgcl_nm: str
     wrd_phcl_nm: str
