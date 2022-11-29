@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from typing import List
 
-from domain.words import Word
+from app.domain.words import Word
 
 
 router = APIRouter(

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from typing import List
 
-from domain.Terms import term
+from app.domain.terms import Term
 
 
 router = APIRouter(

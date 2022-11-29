@@ -1,9 +1,10 @@
 from sqlalchemy import Column, Integer, String
 from pydantic import BaseModel
 
-from . import AbstractTableBase, AbstractBaseModel
+from . import AbstractTableMixin, AbstractBaseModel
+from app.config.databases import Base
 
-class WordTable(AbstractTableBase):
+class WordTable(AbstractTableMixin, Base):
     __tablename__ = 'word'
     wrd_id = Column(Integer, primary_key=True, autoincrement="auto")
     wrd_lgcl_nm: Column(String(50), nullable=False)

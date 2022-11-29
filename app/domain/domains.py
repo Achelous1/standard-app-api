@@ -1,9 +1,11 @@
 from sqlalchemy import Column, Integer, String
 from pydantic import BaseModel
 
-from . import AbstractTableBase, AbstractBaseModel
+from . import AbstractTableMixin, AbstractBaseModel
+from app.config.databases import Base
 
-class DomainTable(AbstractTableBase):
+
+class DomainTable(AbstractTableMixin, Base):
     __tablename__ = 'domain'
     dmn_id = Column(Integer, primary_key=True, autoincrement="auto")
     dmn_lgcl_nm: Column(String(50), nullable=False)

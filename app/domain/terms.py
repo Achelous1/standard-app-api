@@ -1,10 +1,11 @@
 from sqlalchemy import Column, Integer, String
 from pydantic import BaseModel
 
-from . import AbstractTableBase, AbstractBaseModel
+from . import AbstractTableMixin, AbstractBaseModel
+from app.config.databases import Base
 
 
-class TermTable(AbstractTableBase):
+class TermTable(AbstractTableMixin, Base):
     __tablename__ = 'term'
     trm_id = Column(Integer, primary_key=True, autoincrement="auto")
     trm_lgcl_nm: Column(String(50), nullable=False)
