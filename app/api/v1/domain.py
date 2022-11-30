@@ -5,7 +5,7 @@ from app.domain.domains import Domain
 
 
 router = APIRouter(
-    prefix="/domain",
+    prefix="/v1/domain",
     tags=["Domain"],
     responses={404: {"description": "Not found"}}
 )

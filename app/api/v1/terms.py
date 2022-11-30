@@ -5,7 +5,7 @@ from app.domain.terms import Term
 
 
 router = APIRouter(
-    prefix="/term",
+    prefix="/v1/term",
     tags=["Term"],
     responses={404: {"description": "Not found"}}
 )

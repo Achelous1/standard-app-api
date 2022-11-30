@@ -2,11 +2,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, scoped_session
 
-from .config import Settings as settings
+from .config import Settings
+
+settings = Settings()
 
 db_host = settings.database_host
 db_name = settings.database_name
-
 user_name = settings.database_user
 password = settings.database_password
 

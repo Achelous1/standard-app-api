@@ -5,7 +5,7 @@ from app.domain.words import Word
 
 
 router = APIRouter(
-    prefix="/words",
+    prefix="/v1/words",
     tags=["Words"],
     responses={404: {"description": "Not found"}}
 )
