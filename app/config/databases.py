@@ -2,16 +2,18 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, scoped_session
 
+from .config import Settings as settings
 
-user_name = "guest"
-password = "guestpassword"
-db_host = "localhost"
-db_name = "fast_app"
+db_host = settings.database_host
+db_name = settings.database_name
 
-DATABASE = 'mysql+pymysql://%s:%s@%s/%s?charset=utf8mb4' % (
+user_name = settings.database_user
+password = settings.database_password
+
+DATABASE = 'postgresql://%s:%s@%s/%s?charset=utf8mb4' % (
     user_name, 
     password, 
-    db_host, 
+    db_host,
     db_name
 )
 
